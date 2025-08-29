@@ -168,7 +168,7 @@ export default function Navbar({ currentPage = '/' }: NavbarProps) {
                               </div>
                             ) : (
                               <Link
-                                href={service.href}
+                                href={service.href || '#'}
                                 className="block px-4 py-3 text-sm hover:bg-amber-700 transition-colors"
                               >
                                 {service.label}
