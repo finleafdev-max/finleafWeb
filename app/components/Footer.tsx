@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -9,20 +10,19 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Column 1 - Logo & About */}
           <div>
-                         <div className="flex flex-col items-start mb-4">
-               <div className="relative">
-                 <div className="w-12 h-12 bg-green-600 rounded-lg relative flex items-center justify-center">
-                   <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
-                     <div className="w-6 h-6 bg-green-600 rounded-sm relative">
-                       <div className="absolute inset-0.5 bg-white rounded-sm"></div>
-                       <div className="absolute top-0 right-0 text-xs text-green-600 font-bold">®</div>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-               <div className="text-green-600 font-bold text-xl mt-2">FINLEAF</div>
-               <div className="text-green-500 text-xs italic">The consultants</div>
-             </div>
+            <div className="flex flex-col items-start mb-6">
+              <div className="relative mb-4">
+                <Image
+                  src="/finleaf-logo-1-2.png"
+                  alt="Finleaf Logo"
+                  width={120}
+                  height={80}
+                  className="h-16 w-auto object-contain"
+                />
+              </div>
+              <div className="text-white font-bold text-xl">FINLEAF</div>
+              <div className="text-gray-300 text-sm italic">The consultants</div>
+            </div>
             <p className="text-gray-300 mb-4">
               Over The Years, We Have Expanded Our Services To Offer Even More Affordable Options While Maintaining Our Commitment To Customer Satisfaction.
             </p>
