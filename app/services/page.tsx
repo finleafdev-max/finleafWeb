@@ -8,52 +8,88 @@ import Footer from '../components/Footer';
 
 const services = [
   {
-    title: 'E-Drafting & Vetting Service',
-    description: 'Effective documentation is crucial for businesses and organizations to maintain efficient operations and compliance.',
-    image: '/clipboard.png',
-    href: '/services/e-drafting-vetting-service'
+    title: 'Corporate & Regulatory Services',
+    description: 'Company incorporation, MCA compliance, corporate governance, and regulatory advisory services for comprehensive business support.',
+    image: '/bank.png',
+    href: '/services/corporate-regulatory-services'
   },
   {
-    title: 'NBFC incorporation & Compliances',
-    description: 'Stay Ahead of Regulatory Changes with Proactive Compliance Management to Ensure Ongoing Legal Adherence.',
-    image: '/mobile-banking.png',
-    href: '/services/nbfc-incorporation-compliances'
+    title: 'Corporate Litigation & Dispute Resolution',
+    description: 'Expert representation before NCLT, NCLAT, High Courts, and Supreme Court with comprehensive dispute resolution strategies.',
+    image: '/leader.png',
+    href: '/services/corporate-litigation-and-representation'
   },
   {
-    title: 'IRDAI incorporation & Compliances',
-    description: 'Ensuring the trust, integrity, and resilience of India\'s insurance sector for secure and reliable services.',
-    image: '/save-money.png',
-    href: '/services/irdai-incorporation-compliances'
+    title: 'Capital Markets & SEBI Advisory',
+    description: 'IPO services, SEBI compliance, merchant banking support, and capital market advisory for successful public offerings.',
+    image: '/presentation.png',
+    href: '/services/capital-markets-sebi-advisory'
   },
   {
-    title: 'FEMA Compliances & Advisory Services',
-    description: 'Effortless cross-border transactions with comprehensive FEMA compliance services for smooth and secure international dealings.',
-    image: '/financial-advisor-1.png',
-    href: '/services/fema-compliances-advisory-services'
-  },
-  {
-    title: 'Insolvency Resolution Services - NCLT',
-    description: 'Restructuring pathways for a fresh start, enabling debt repayment, and restoring long-term financial stability effectively.',
-    image: '/insolvency.png',
-    href: '/services/insolvency-resolution-services-nclt'
-  },
-  {
-    title: 'Mergers & Amalgamation Services',
-    description: 'Mergers and Acquisitions: Catalyzing Growth, Expanding Market Reach, and Shaping a New Era of Collaboration.',
+    title: 'Mergers, Acquisitions & Transaction Advisory',
+    description: 'Legal due diligence, M&A advisory, joint ventures, and transaction structuring for successful business combinations.',
     image: '/handshake-3.png',
     href: '/services/mergers-and-amalgamation-services'
   },
   {
-    title: 'Fintech Advisory Services',
-    description: 'Fintech: Pioneering Financial Solutions For The Digital Age For Unlocking Financial Potential Through Cutting-edge Technology.',
-    image: '/presentation.png',
-    href: '/services/fintech-advisory-services'
+    title: 'Alternative Investment Funds (AIFs)',
+    description: 'AIF structuring, registration, compliance, and advisory services for fund managers, trustees, and investors.',
+    image: '/financial-advisor-1.png',
+    href: '/services/alternative-investment-funds'
   },
   {
-    title: 'Corporate Litigation and Representation',
-    description: 'Providing Comprehensive Corporate Legal Services With Expertise In Various Aspects Of Business Law.',
-    image: '/leader.png',
-    href: '/services/corporate-litigation-and-representation'
+    title: 'Merchant Banking & Financial Advisory',
+    description: 'Due diligence reports, valuation support, fairness opinions, and compliance documentation for corporate finance transactions.',
+    image: '/mobile-banking.png',
+    href: '/services/merchant-banking-financial-advisory'
+  },
+  {
+    title: 'IPO & Listing Services',
+    description: 'IPO legal due diligence, DRHP drafting, pre-IPO restructuring, and ongoing post-listing advisory services.',
+    image: '/case.png',
+    href: '/services/ipo-listing-services'
+  },
+  {
+    title: 'Due Diligence & Transaction Support',
+    description: 'Comprehensive legal due diligence, transaction structuring, and advisory for mergers, acquisitions, and strategic alliances.',
+    image: '/clipboard.png',
+    href: '/services/due-diligence-transaction-support'
+  },
+  {
+    title: 'Drafting & B2B Contractual Advisory',
+    description: 'Customized agreement drafting, shareholders agreements, employment contracts, and general corporate advisory services.',
+    image: '/consultation.png',
+    href: '/services/e-drafting-vetting-service'
+  },
+  {
+    title: 'ESOPs, Sweat Equity & Instruments',
+    description: 'ESOP structuring, sweat equity issuances, convertible instruments, and private placement advisory services.',
+    image: '/team.png',
+    href: '/services/esops-sweat-equity-instruments'
+  },
+  {
+    title: 'Taxation Advisory & Litigation',
+    description: 'GST advisory, tax litigation, direct and indirect tax structuring, and international taxation advisory services.',
+    image: '/save-money.png',
+    href: '/services/taxation-advisory-litigation'
+  },
+  {
+    title: 'Labour & Employment Laws',
+    description: 'Employment contracts, HR policies, POSH compliance, labour law audits, and representation before tribunals.',
+    image: '/proven.png',
+    href: '/services/labour-employment-laws'
+  },
+  {
+    title: 'Intellectual Property & Digital Laws',
+    description: 'Trademark, copyright, patent services, IP litigation, data protection advisory, and cyber law compliance.',
+    image: '/copyright.png',
+    href: '/services/intellectual-property-digital-laws'
+  },
+  {
+    title: 'Specialized Advisory',
+    description: 'Family business structuring, trusts advisory, cross-border transactions, startup support, and ESG legal advisory.',
+    image: '/licence.png',
+    href: '/services/specialized-advisory'
   }
 ];
 
