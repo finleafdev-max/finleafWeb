@@ -63,6 +63,7 @@ interface NavbarProps {
 export default function Navbar({ currentPage = '/' }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
   const navItemsWithActive = navItems.map(item => ({
@@ -85,6 +86,10 @@ export default function Navbar({ currentPage = '/' }: NavbarProps) {
     setTimeoutId(id);
   };
 
+  const handleMobileServicesToggle = () => {
+    setMobileServicesOpen(!mobileServicesOpen);
+  };
+
   return (
     <nav className="fixed w-full bg-white z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,11 +109,91 @@ export default function Navbar({ currentPage = '/' }: NavbarProps) {
           <div className="hidden md:flex items-center space-x-8">
             {navItemsWithActive.map((item) => (
               <div key={item.label} className="relative">
-                <div
-                  className="relative"
-                  onMouseEnter={() => item.hasDropdown && handleMouseEnter()}
-                  onMouseLeave={() => item.hasDropdown && handleMouseLeave()}
-                >
+                {item.hasDropdown ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <div className="flex items-center">
+                      <Link
+                        href={item.href}
+                        className={clsx(
+                          "relative text-gray-800 hover:text-primary transition-colors",
+                          item.isActive && "text-primary"
+                        )}
+                      >
+                        <span>{item.label}</span>
+                        {item.isActive && (
+                          <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></div>
+                        )}
+                      </Link>
+                      <button
+                        className="ml-1 p-1 text-gray-800 hover:text-primary transition-colors"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
+                  
+                    {/* Services Dropdown */}
+                    {servicesDropdownOpen && (
+                      <div 
+                        className="absolute top-full left-0 mt-2 w-96 bg-amber-800 text-white rounded-lg shadow-xl z-50 border border-amber-700"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <div className="py-3">
+                          {servicesDropdown.map((service, index) => (
+                            <div key={service.label}>
+                              {service.hasSubmenu ? (
+                                <div className="group relative">
+                                  <div className="flex items-center justify-between px-4 py-3 hover:bg-amber-700 transition-colors cursor-pointer">
+                                    <span className="text-sm font-medium">{service.label}</span>
+                                    <svg className="w-4 h-4 transform group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                  </div>
+                                  {/* Submenu */}
+                                  <div className="absolute left-full top-0 w-80 bg-amber-700 rounded-lg shadow-xl border border-amber-600 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                    <div className="py-2">
+                                      {service.submenu?.map((subItem, subIndex) => (
+                                        <div key={subItem.label}>
+                                          <Link
+                                            href={subItem.href}
+                                            className="block px-4 py-3 text-sm hover:bg-amber-600 transition-colors"
+                                          >
+                                            {subItem.label}
+                                          </Link>
+                                          {subIndex < (service.submenu?.length || 0) - 1 && (
+                                            <div className="border-b border-amber-600 mx-4"></div>
+                                          )}
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </div>
+                              ) : (
+                                <Link
+                                  href={service.href || '#'}
+                                  className="block px-4 py-3 text-sm hover:bg-amber-700 transition-colors"
+                                >
+                                  {service.label}
+                                </Link>
+                              )}
+                              {index < servicesDropdown.length - 1 && (
+                                <div className="border-b border-amber-700 mx-4"></div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
                   <Link
                     href={item.href}
                     className={clsx(
@@ -116,73 +201,12 @@ export default function Navbar({ currentPage = '/' }: NavbarProps) {
                       item.isActive && "text-primary"
                     )}
                   >
-                    <span className="flex items-center">
-                      {item.label}
-                      {item.hasDropdown && (
-                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      )}
-                    </span>
+                    <span>{item.label}</span>
                     {item.isActive && (
                       <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"></div>
                     )}
                   </Link>
-                  
-                  {/* Services Dropdown */}
-                  {item.hasDropdown && servicesDropdownOpen && (
-                    <div 
-                      className="absolute top-full left-0 mt-2 w-96 bg-amber-800 text-white rounded-lg shadow-xl z-50 border border-amber-700"
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <div className="py-3">
-                        {servicesDropdown.map((service, index) => (
-                          <div key={service.label}>
-                            {service.hasSubmenu ? (
-                              <div className="group relative">
-                                <div className="flex items-center justify-between px-4 py-3 hover:bg-amber-700 transition-colors cursor-pointer">
-                                  <span className="text-sm font-medium">{service.label}</span>
-                                  <svg className="w-4 h-4 transform group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </div>
-                                {/* Submenu */}
-                                <div className="absolute left-full top-0 w-80 bg-amber-700 rounded-lg shadow-xl border border-amber-600 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                  <div className="py-2">
-                                    {service.submenu?.map((subItem, subIndex) => (
-                                      <div key={subItem.label}>
-                                        <Link
-                                          href={subItem.href}
-                                          className="block px-4 py-3 text-sm hover:bg-amber-600 transition-colors"
-                                        >
-                                          {subItem.label}
-                                        </Link>
-                                        {subIndex < (service.submenu?.length || 0) - 1 && (
-                                          <div className="border-b border-amber-600 mx-4"></div>
-                                        )}
-                                      </div>
-                                    ))}
-                                  </div>
-                                </div>
-                              </div>
-                            ) : (
-                              <Link
-                                href={service.href || '#'}
-                                className="block px-4 py-3 text-sm hover:bg-amber-700 transition-colors"
-                              >
-                                {service.label}
-                              </Link>
-                            )}
-                            {index < servicesDropdown.length - 1 && (
-                              <div className="border-b border-amber-700 mx-4"></div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                )}
               </div>
             ))}
             <Link
@@ -243,24 +267,102 @@ export default function Navbar({ currentPage = '/' }: NavbarProps) {
       >
         <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
           {navItemsWithActive.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className={clsx(
-                "block px-3 py-2 text-gray-700 hover:text-primary transition-colors",
-                item.isActive && "text-primary"
+            <div key={item.label}>
+              {item.hasDropdown ? (
+                <div>
+                  <div className="flex items-center">
+                    <Link
+                      href={item.href}
+                      className={clsx(
+                        "flex-1 px-3 py-2 text-gray-700 hover:text-primary transition-colors",
+                        item.isActive && "text-primary"
+                      )}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                    <button
+                      onClick={handleMobileServicesToggle}
+                      className="px-3 py-2 text-gray-700 hover:text-primary transition-colors"
+                    >
+                      <svg 
+                        className={clsx(
+                          "w-4 h-4 transition-transform duration-200",
+                          mobileServicesOpen && "rotate-180"
+                        )} 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  {/* Mobile Services Dropdown */}
+                  <motion.div
+                    initial={false}
+                    animate={mobileServicesOpen ? 'open' : 'closed'}
+                    variants={{
+                      open: { opacity: 1, height: 'auto' },
+                      closed: { opacity: 0, height: 0 }
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pl-6 pr-3 py-2 space-y-1 bg-gray-50">
+                      {servicesDropdown.map((service, index) => (
+                        <div key={service.label}>
+                          {service.hasSubmenu ? (
+                            <div>
+                              <div className="px-3 py-2 text-sm font-medium text-gray-600 border-b border-gray-200">
+                                {service.label}
+                              </div>
+                              <div className="pl-4 space-y-1">
+                                {service.submenu?.map((subItem) => (
+                                  <Link
+                                    key={subItem.label}
+                                    href={subItem.href}
+                                    className="block px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors"
+                                    onClick={() => {
+                                      setIsOpen(false);
+                                      setMobileServicesOpen(false);
+                                    }}
+                                  >
+                                    {subItem.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <Link
+                              href={service.href || '#'}
+                              className="block px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors"
+                              onClick={() => {
+                                setIsOpen(false);
+                                setMobileServicesOpen(false);
+                              }}
+                            >
+                              {service.label}
+                            </Link>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={clsx(
+                    "block px-3 py-2 text-gray-700 hover:text-primary transition-colors",
+                    item.isActive && "text-primary"
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
               )}
-              onClick={() => setIsOpen(false)}
-            >
-              <span className="flex items-center">
-                {item.label}
-                {item.hasDropdown && (
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                )}
-              </span>
-            </Link>
+            </div>
           ))}
           <Link
             href="https://calendly.com/finleaf/30min"
