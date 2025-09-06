@@ -166,25 +166,25 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-black/40"></div>
               <div className="relative z-10 flex items-center justify-center h-full">
-                <div className="text-center text-white max-w-4xl mx-auto px-4">
+                <div className="text-center text-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                   <motion.h3 
-                    className="text-4xl md:text-6xl font-bold mb-6"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                   >
-                    FinLeaf : Where Expertise<br />
-                    Meets Excellence in CA, CS,<br />
-                    & Legal Consultancy
+                    FinLeaf : Where Expertise<br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>Meets Excellence in CA, CS,<br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>& Legal Consultancy
                   </motion.h3>
                   <motion.p 
-                    className="text-xl md:text-2xl mb-8"
+                    className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                   >
-                    FinLeaf provides top-tier CA, CS, and legal services, combining deep<br />
-                    expertise with a commitment to excellence for all your needs.
+                    FinLeaf provides top-tier CA, CS, and legal services, combining deep<br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>expertise with a commitment to excellence for all your needs.
                   </motion.p>
                   <motion.div 
                     className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -194,13 +194,13 @@ export default function Home() {
                   >
                     <a 
                       href="/finleaf-legal" 
-                      className="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors"
+                      className="bg-primary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary/90 transition-colors"
                     >
                       FinLeaf Legal
                     </a>
                     <a 
                       href="/contact-us" 
-                      className="bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
+                      className="bg-white text-gray-900 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-100 transition-colors"
                     >
                       Contact Us
                     </a>
@@ -216,9 +216,9 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-black/40"></div>
               <div className="relative z-10 flex items-center justify-center h-full">
-                <div className="text-center text-white max-w-4xl mx-auto px-4">
+                <div className="text-center text-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                   <motion.h1 
-                    className="text-4xl md:text-6xl font-bold mb-6"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -226,13 +226,13 @@ export default function Home() {
                     FinLeaf: Simplifying Complexities in Finance and Legal Matters
                   </motion.h1>
                   <motion.p 
-                    className="text-xl md:text-2xl mb-8"
+                    className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                   >
-                    FinLeaf provides seamless CA, CS, and legal services, expertly<br />
-                    navigating financial complexities to ensure your business thrives.
+                    FinLeaf provides seamless CA, CS, and legal services, expertly<br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>navigating financial complexities to ensure your business thrives.
                   </motion.p>
                   <motion.div 
                     className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -242,13 +242,13 @@ export default function Home() {
                   >
                     <a 
                       href="/finleaf-legal" 
-                      className="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors"
+                      className="bg-primary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary/90 transition-colors"
                     >
                       Finleaf Legal
                     </a>
                     <a 
                       href="/contact-us" 
-                      className="bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
+                      className="bg-white text-gray-900 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-100 transition-colors"
                     >
                       Contact Us
                     </a>
@@ -262,10 +262,10 @@ export default function Home() {
 
       {/* About Finleaf Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2 
-              className="text-4xl font-bold text-gray-900 mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -274,7 +274,7 @@ export default function Home() {
               About Finleaf
             </motion.h2>
             <motion.p 
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -284,7 +284,7 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div 
               className="relative"
               initial={{ opacity: 0, x: -50 }}
@@ -306,25 +306,25 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-bold text-gray-900">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
                 Your Trusted Partner For Compliance Since Decades
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 Over The Years, We Have Expanded Our Services To Offer Even More Affordable Options While Maintaining Our Commitment To Customer Satisfaction.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 By Offering Online Business Registration, We Save Our Clients Time And Effort. Our Success Has Positioned Us As A Leading Provider Of Corporate Legal Services Pan India.
               </p>
               
-              <div className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md">
-                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-white rounded-lg shadow-md">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                   </svg>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Contact Us</h4>
-                  <p className="text-primary font-semibold">+91 9599762894</p>
+                <div className="min-w-0">
+                  <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Contact Us</h4>
+                  <p className="text-primary font-semibold text-sm sm:text-base">+91 9599762894</p>
                 </div>
               </div>
             </motion.div>
@@ -334,8 +334,8 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, index) => (
               <motion.div 
                 key={stat.label}
@@ -345,15 +345,15 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-3 sm:mb-4">
                   <img 
                     src={stat.icon} 
                     alt={stat.label}
-                    className="w-16 h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                   />
                 </div>
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 sm:mb-2">{stat.value}</div>
+                <div className="text-gray-600 font-medium text-xs sm:text-sm md:text-base leading-tight">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -362,10 +362,10 @@ export default function Home() {
 
       {/* Top Services Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2 
-              className="text-4xl font-bold text-gray-900 mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -374,7 +374,7 @@ export default function Home() {
               Finleaf Top Services
             </motion.h2>
             <motion.p 
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -384,7 +384,7 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
               <motion.div 
                 key={service.title}
@@ -394,24 +394,24 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="p-6">
-                  <div className="flex justify-center mb-4">
+                <div className="p-4 sm:p-6">
+                  <div className="flex justify-center mb-3 sm:mb-4">
                     <img 
                       src={service.icon} 
                       alt={service.title}
-                      className="w-16 h-16 object-contain"
+                      className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 text-center leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 text-sm text-center mb-4">
+                  <p className="text-gray-600 text-xs sm:text-sm text-center mb-3 sm:mb-4 leading-relaxed">
                     {service.description}
                   </p>
                   <div className="text-center">
                     <a 
                       href={service.href}
-                      className="inline-block bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+                      className="inline-block bg-primary text-white px-4 py-2 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
                     >
                       Know More
                     </a>

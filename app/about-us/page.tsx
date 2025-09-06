@@ -48,10 +48,10 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-96 bg-gradient-to-br from-amber-600 via-amber-500 to-yellow-500">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center justify-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
           <div className="text-center text-white">
             <motion.h1 
-              className="text-6xl font-bold mb-6 tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -76,8 +76,8 @@ export default function AboutPage() {
            <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-500 rounded-full translate-x-1/2 translate-y-1/2"></div>
          </div>
          
-         <div className="max-w-7xl mx-auto px-4 relative z-10">
-           <div className="grid lg:grid-cols-2 gap-16 items-center">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
              {/* Left Column - Text and Statistics */}
              <motion.div 
                initial={{ opacity: 0, x: -50 }}
@@ -88,15 +88,15 @@ export default function AboutPage() {
                <div className="inline-block bg-amber-100 text-amber-700 font-semibold px-4 py-2 rounded-full text-sm mb-6">
                  1575 + Success full Cases
                </div>
-               <h2 className="text-5xl font-bold text-gray-900 mb-8 leading-tight">
+               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
                  India's Top Corporate Legal Consultants
                </h2>
-               <p className="text-gray-600 mb-12 text-lg leading-relaxed">
+               <p className="text-gray-600 mb-8 sm:mb-12 text-base sm:text-lg leading-relaxed">
                  Finleaf has team of expert Professionals Who Possess extensive knowledge and rich experience in fields related to including corporate law, taxation, intellectual property rights, and other related and allied services.
                </p>
               
                              {/* Statistics */}
-               <div className="space-y-8">
+               <div className="space-y-6 sm:space-y-8">
                  {stats.map((stat, index) => (
                    <motion.div
                      key={index}
@@ -104,15 +104,15 @@ export default function AboutPage() {
                      whileInView={{ opacity: 1, x: 0 }}
                      transition={{ duration: 0.6, delay: index * 0.1 }}
                      viewport={{ once: true }}
-                     className="space-y-3"
+                     className="space-y-2 sm:space-y-3"
                    >
                      <div className="flex justify-between items-center">
-                       <span className="font-medium text-gray-700 text-lg">{stat.label}</span>
-                       <span className="font-bold text-amber-600 text-xl">{stat.value}</span>
+                       <span className="font-medium text-gray-700 text-sm sm:text-base md:text-lg">{stat.label}</span>
+                       <span className="font-bold text-amber-600 text-lg sm:text-xl">{stat.value}</span>
                      </div>
-                     <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                     <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3 overflow-hidden">
                        <motion.div 
-                         className="bg-gradient-to-r from-amber-500 to-yellow-500 h-3 rounded-full"
+                         className="bg-gradient-to-r from-amber-500 to-yellow-500 h-2 sm:h-3 rounded-full"
                          initial={{ width: 0 }}
                          whileInView={{ width: `${stat.percentage}%` }}
                          transition={{ duration: 1.5, delay: index * 0.2 }}
@@ -132,48 +132,48 @@ export default function AboutPage() {
                viewport={{ once: true }}
                className="relative"
              >
-               <div className="grid grid-cols-2 gap-6">
-                 <div className="space-y-6">
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                 <div className="space-y-4 sm:space-y-6">
                    {/* Handshake Icon */}
-                   <div className="bg-amber-50 rounded-2xl p-6 border border-amber-200 hover:bg-amber-100 transition-all duration-300 group shadow-lg">
-                     <div className="flex items-center justify-center h-32">
+                   <div className="bg-amber-50 rounded-2xl p-4 sm:p-6 border border-amber-200 hover:bg-amber-100 transition-all duration-300 group shadow-lg">
+                     <div className="flex items-center justify-center h-24 sm:h-32">
                        <img 
                          src="/handshake-3.png" 
                          alt="Professional Partnership"
-                         className="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                         className="w-16 h-16 sm:w-20 sm:h-20 object-contain group-hover:scale-110 transition-transform duration-300"
                        />
                      </div>
-                     <p className="text-center text-gray-700 text-sm mt-4 font-medium">
+                     <p className="text-center text-gray-700 text-xs sm:text-sm mt-3 sm:mt-4 font-medium">
                        Professional Partnership
                      </p>
                    </div>
                    
                    {/* Presentation Icon */}
-                   <div className="bg-amber-50 rounded-2xl p-6 border border-amber-200 hover:bg-amber-100 transition-all duration-300 group shadow-lg">
-                     <div className="flex items-center justify-center h-32">
+                   <div className="bg-amber-50 rounded-2xl p-4 sm:p-6 border border-amber-200 hover:bg-amber-100 transition-all duration-300 group shadow-lg">
+                     <div className="flex items-center justify-center h-24 sm:h-32">
                        <img 
                          src="/presentation.png" 
                          alt="Strategic Planning"
-                         className="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                         className="w-16 h-16 sm:w-20 sm:h-20 object-contain group-hover:scale-110 transition-transform duration-300"
                        />
                      </div>
-                     <p className="text-center text-gray-700 text-sm mt-4 font-medium">
+                     <p className="text-center text-gray-700 text-xs sm:text-sm mt-3 sm:mt-4 font-medium">
                        Strategic Planning
                      </p>
                    </div>
                  </div>
                  
                  {/* Team Leadership Icon */}
-                 <div className="pt-12">
-                   <div className="bg-amber-50 rounded-2xl p-6 border border-amber-200 hover:bg-amber-100 transition-all duration-300 group h-full shadow-lg">
-                     <div className="flex items-center justify-center h-48">
+                 <div className="sm:pt-12">
+                   <div className="bg-amber-50 rounded-2xl p-4 sm:p-6 border border-amber-200 hover:bg-amber-100 transition-all duration-300 group h-full shadow-lg">
+                     <div className="flex items-center justify-center h-32 sm:h-48">
                        <img 
                          src="/leader.png" 
                          alt="Team Leadership"
-                         className="w-24 h-24 object-contain group-hover:scale-110 transition-transform duration-300"
+                         className="w-20 h-20 sm:w-24 sm:h-24 object-contain group-hover:scale-110 transition-transform duration-300"
                        />
                      </div>
-                     <p className="text-center text-gray-700 text-sm mt-4 font-medium">
+                     <p className="text-center text-gray-700 text-xs sm:text-sm mt-3 sm:mt-4 font-medium">
                        Team Leadership
                      </p>
                    </div>
