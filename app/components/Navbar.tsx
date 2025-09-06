@@ -8,7 +8,7 @@ import clsx from 'clsx';
 
 const navItems = [
   { label: 'Home', href: '/', isActive: false },
-  { label: 'About Us', href: '/about', isActive: false },
+  { label: 'About Us', href: '/about-us', isActive: false },
   { label: 'Services', href: '/services', hasDropdown: true, isActive: false },
   { label: 'Blogs', href: '/blogs', isActive: false },
   { label: 'Contact Us', href: '/contact-us', isActive: false },

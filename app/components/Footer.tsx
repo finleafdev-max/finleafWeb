@@ -9,16 +9,20 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Column 1 - Logo & About */}
           <div>
-            <div className="flex flex-col items-start mb-4">
-              <div className="relative">
-                <div className="w-8 h-8 bg-primary rounded-sm relative">
-                  <div className="absolute inset-1 bg-white rounded-sm"></div>
-                  <div className="absolute top-0 right-0 text-xs text-gray-600 font-bold">®</div>
-                </div>
-              </div>
-              <div className="text-primary font-bold text-xl mt-1">FINLEAF</div>
-              <div className="text-primary text-xs italic">The consultants</div>
-            </div>
+                         <div className="flex flex-col items-start mb-4">
+               <div className="relative">
+                 <div className="w-12 h-12 bg-green-600 rounded-lg relative flex items-center justify-center">
+                   <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+                     <div className="w-6 h-6 bg-green-600 rounded-sm relative">
+                       <div className="absolute inset-0.5 bg-white rounded-sm"></div>
+                       <div className="absolute top-0 right-0 text-xs text-green-600 font-bold">®</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div className="text-green-600 font-bold text-xl mt-2">FINLEAF</div>
+               <div className="text-green-500 text-xs italic">The consultants</div>
+             </div>
             <p className="text-gray-300 mb-4">
               Over The Years, We Have Expanded Our Services To Offer Even More Affordable Options While Maintaining Our Commitment To Customer Satisfaction.
             </p>
@@ -41,7 +45,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-300">
               <li><Link href="/" className="hover:text-white">Home</Link></li>
-              <li><Link href="/about" className="hover:text-white">About Us</Link></li>
+              <li><Link href="/about-us" className="hover:text-white">About Us</Link></li>
               <li><Link href="/services" className="hover:text-white">Services</Link></li>
               <li><Link href="/contact" className="hover:text-white">Contact Us</Link></li>
               <li><Link href="/legal" className="hover:text-white">Finleaf Legal</Link></li>

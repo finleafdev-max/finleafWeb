@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -80,6 +81,17 @@ const categories = [
 ];
 
 export default function BlogsPage() {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Filter blog posts based on selected category
+  const filteredPosts = selectedCategory === 'All' 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
+
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar currentPage="/blogs" />
@@ -128,9 +140,10 @@ export default function BlogsPage() {
             {categories.map((category, index) => (
               <button
                 key={category}
+                onClick={() => handleCategoryClick(category)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  category === 'All' 
-                    ? 'bg-amber-600 text-white' 
+                  selectedCategory === category
+                    ? 'bg-amber-600 text-white shadow-lg' 
                     : 'bg-gray-100 text-gray-700 hover:bg-amber-100 hover:text-amber-700'
                 }`}
               >
@@ -139,9 +152,22 @@ export default function BlogsPage() {
             ))}
           </motion.div>
 
+          {/* Results Count */}
+          <motion.div 
+            className="text-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <p className="text-gray-600">
+              {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'} found
+              {selectedCategory !== 'All' && ` in ${selectedCategory}`}
+            </p>
+          </motion.div>
+
           {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+            {filteredPosts.map((post, index) => (
               <motion.article
                 key={post.id}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
@@ -192,17 +218,41 @@ export default function BlogsPage() {
             ))}
           </div>
 
-          {/* Load More Button */}
-          <motion.div 
-            className="text-center mt-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <button className="bg-amber-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-amber-700 transition-colors duration-300">
-              Load More Articles
-            </button>
-          </motion.div>
+          {/* No Results Message */}
+          {filteredPosts.length === 0 && (
+            <motion.div 
+              className="text-center py-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-6xl mb-4">📝</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No articles found</h3>
+              <p className="text-gray-600 mb-6">
+                No articles found in the {selectedCategory} category. Try selecting a different category.
+              </p>
+              <button
+                onClick={() => setSelectedCategory('All')}
+                className="bg-amber-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-amber-700 transition-colors duration-300"
+              >
+                View All Articles
+              </button>
+            </motion.div>
+          )}
+
+          {/* Load More Button - Only show if there are filtered posts */}
+          {filteredPosts.length > 0 && (
+            <motion.div 
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <button className="bg-amber-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-amber-700 transition-colors duration-300">
+                Load More Articles
+              </button>
+            </motion.div>
+          )}
         </div>
       </section>
 
@@ -240,3 +290,4 @@ export default function BlogsPage() {
     </main>
   );
 }
+
