@@ -37,49 +37,49 @@ const services = [
     title: 'E-Drafting & Vetting Service',
     description: 'Effective documentation is crucial for businesses and organizations to maintain efficient operations and compliance.',
     icon: '/clipboard.png',
-    href: '/services/e-drafting'
+    href: '/services/e-drafting-vetting-service'
   },
   {
-    title: 'NBFC incorporation & Compliances',
+    title: 'Corporate & Regulatory Services',
+    description: 'Comprehensive corporate compliance and regulatory services to ensure your business operates within legal frameworks.',
+    icon: '/case.png',
+    href: '/services/corporate-regulatory-services'
+  },
+  {
+    title: 'NBFC Incorporation & Compliances',
     description: 'Stay Ahead of Regulatory Changes with Proactive Compliance Management to Ensure Ongoing Legal Adherence.',
     icon: '/mobile-banking.png',
-    href: '/services/nbfc'
+    href: '/services/nbfc-incorporation-compliances'
   },
   {
-    title: 'IRDAI incorporation & Compliances',
+    title: 'IRDAI Incorporation & Compliances',
     description: 'Ensuring the trust, integrity, and resilience of India\'s insurance sector for secure and reliable services.',
     icon: '/save-money.png',
-    href: '/services/irdai'
+    href: '/services/irdai-incorporation-compliances'
   },
   {
     title: 'FEMA Compliances & Advisory Services',
     description: 'Effortless cross-border transactions with comprehensive FEMA compliance services for smooth and secure international dealings.',
     icon: '/financial-advisor-1.png',
-    href: '/services/fema'
+    href: '/services/fema-compliances-advisory-services'
   },
   {
     title: 'Insolvency Resolution Services – NCLT',
     description: 'Restructuring pathways for a fresh start, enabling debt repayment, and restoring long-term financial stability effectively.',
     icon: '/insolvency.png',
-    href: '/services/insolvency'
+    href: '/services/insolvency-resolution-services-nclt'
   },
   {
     title: 'Mergers & Amalgamation Services',
     description: 'Mergers and Acquisitions: Catalyzing Growth, Expanding Market Reach, and Shaping a New Era of Collaboration.',
     icon: '/handshake-3.png',
-    href: '/services/mergers'
+    href: '/services/mergers-and-amalgamation-services'
   },
   {
     title: 'Fintech Advisory Services',
     description: 'Fintech: Pioneering Financial Solutions For The Digital Age For Unlocking Financial Potential Through Cutting-edge Technology',
     icon: '/consultation.png',
-    href: '/services/fintech'
-  },
-  {
-    title: 'Corporate Litigation & Representations',
-    description: 'Corporate Litigations: Advocating Corporate Justice, Unlocking Legal Solutions For Resolving Disputes, Safeguarding Corporate Integrity.',
-    icon: '/team.png',
-    href: '/services/corporate-litigation'
+    href: '/services/fintech-advisory-services'
   },
 ];
 
