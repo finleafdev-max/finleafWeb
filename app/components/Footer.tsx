@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300">
-          <p>Copyright © 2024 Finleaf All Right Reserved. Designed by PromotionAdda</p>
+          <p>Copyright © 2025 Finleaf All Right Reserved. Designed by Finleaf</p>
         </div>
       </div>
     </footer>
